@@ -1,5 +1,6 @@
 import React from 'react';
+import CircleTab from './components/circleTab/circleTab';
 
 export const App = () => {
-  return <h1>Hello!</h1>;
+  return <CircleTab />;
 };
