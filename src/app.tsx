@@ -1,6 +1,6 @@
 import React from 'react';
-import CircleTab from './components/circleTab/circleTab';
+import RingMenu from './components/ringMenu/ringMenu';
 
 export const App = () => {
-  return <CircleTab />;
+  return <RingMenu/>;
 };
