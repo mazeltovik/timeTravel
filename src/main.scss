@@ -1,13 +1,10 @@
-$main-bg: #E5E5E5;
-$clr-grey-1: #D9D9D9;
-$clr-grey-2:#e9e9e9;
-$clr-blue-1: #42567A;
-$clr-blue-2: #303E58;
-$clr-blue-3:#5D5FEF;
-$clr-purple-1:#EF5DA8;
-
-
-
+$main-bg: #e5e5e5;
+$clr-grey-1: #d9d9d9;
+$clr-grey-2: #e9e9e9;
+$clr-blue-1: #42567a;
+$clr-blue-2: #303e58;
+$clr-blue-3: #5d5fef;
+$clr-purple-1: #ef5da8;
 
 *,
 ::before,
@@ -15,9 +12,9 @@ $clr-purple-1:#EF5DA8;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-//   font-family: 'Besley', serif;
-//   font-optical-sizing: auto;
-//   font-style: normal;
+  font-family: 'PT Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 body {

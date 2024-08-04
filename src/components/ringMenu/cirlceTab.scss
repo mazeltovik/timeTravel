@@ -1,7 +1,7 @@
 @import '../../main';
 .ringMenu {
   position: relative;
-  border: 3px solid  $clr-grey-1;
+  border: 3px solid $clr-grey-1;
   border-radius: 50%;
   width: 500px;
   height: 500px;
@@ -20,30 +20,30 @@
     cursor: pointer;
     border-radius: 50%;
     transition: 0.3s;
-    &.active{
-        left: calc(50% - 25px);
-        top: calc(50% - 25px);
-        height: 56px;
-        width: 56px; 
-        background: $clr-grey-2;
-        border: 3px solid $clr-grey-1;
-        p{
-            display: block;
-            transition: 2s;
-        }
+    &.active {
+      left: calc(50% - 25px);
+      top: calc(50% - 25px);
+      height: 56px;
+      width: 56px;
+      background: $clr-grey-2;
+      border: 3px solid $clr-grey-1;
+      p {
+        display: block;
+        transition: 2s;
+      }
     }
-    &:hover{
-        left: calc(50% - 25px);
-        top: calc(50% - 25px);
-        height: 56px;
-        width: 56px;
-        transition: 0.3s;
-        background: $clr-grey-2;
-        border: 3px solid $clr-grey-1;
-        p{
-           display: block;
-           transition: 2s;
-        }
+    &:hover {
+      left: calc(50% - 25px);
+      top: calc(50% - 25px);
+      height: 56px;
+      width: 56px;
+      transition: 0.3s;
+      background: $clr-grey-2;
+      border: 3px solid $clr-grey-1;
+      p {
+        display: block;
+        transition: 2s;
+      }
     }
     p {
       text-align: center;
