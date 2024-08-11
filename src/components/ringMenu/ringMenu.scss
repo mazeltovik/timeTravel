@@ -1,8 +1,8 @@
 @import '../../main';
 
-.ringMenuWrapper{
+.ringMenuWrapper {
   position: relative;
-  .theme{
+  .theme {
     position: absolute;
     left: calc(90% - 25px);
     top: calc(9% - 25px);
@@ -10,7 +10,7 @@
     color: $clr-blue-1;
     font-weight: bold;
     opacity: 0;
-    &.fadeIn{
+    &.fadeIn {
       opacity: 1;
       animation: fadeIn 1.5s;
     }
@@ -45,7 +45,6 @@
         border: 3px solid $clr-grey-1;
         p {
           display: block;
-          // transition: 4s;
         }
       }
       &:hover {
@@ -108,8 +107,18 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-
+@media only screen and (max-width: 990px) {
+  .ringMenuWrapper {
+    .ringMenu {
+      display: none;
+    }
+  }
+}

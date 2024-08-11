@@ -12,3 +12,11 @@
     color: $clr-purple-1;
   }
 }
+
+@media only screen and (max-width: 990px) {
+  .timeContainer {
+    display: flex;
+    gap: 2.3rem;
+    font-size: 56px;
+  }
+}

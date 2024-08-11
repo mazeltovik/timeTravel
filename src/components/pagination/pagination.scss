@@ -1,52 +1,107 @@
 @import '../../main';
 
-.paginationContainer{
-  .amountContainer p{
-    color: $clr-blue-1;
-    margin-bottom: 20px;
+.paginationContainer {
+  display: flex;
+  .counterPagination {
+    .amountContainer p {
+      font-size: 14px;
+      color: $clr-blue-1;
+      margin-bottom: 20px;
+    }
+    .counterContainer {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      width: 140px;
+      .minus {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid $clr-grey-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        user-select: none;
+        cursor: pointer;
+        &.over {
+          opacity: 50%;
+        }
+        &:hover {
+          background: white;
+          transition: 0.3s ease-in;
+        }
+      }
+      .plus {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid $clr-grey-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        user-select: none;
+        cursor: pointer;
+        &.over {
+          opacity: 50%;
+        }
+        &:hover {
+          background: white;
+          transition: 0.3s ease-in;
+        }
+      }
+    }
   }
-  .counterContainer {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 140px;
-    .minus {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 3px solid $clr-grey-1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      user-select: none;
-      cursor: pointer;
-      &.over{
-        opacity: 50%;
-      }
-      &:hover {
-        background: white;
-        transition: 0.3s ease-in;
-      }
-    }
-    .plus {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%; 
-      border: 3px solid $clr-grey-1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      user-select: none;
-      cursor: pointer;
-      &.over{
-        opacity: 50%;
-      }
-      &:hover {
-        background: white;
-        transition: 0.3s ease-in;
-      }
-    }
+  .bulletPagination {
+    display: none;
+  }
 }
+
+@media only screen and (max-width: 990px) {
+  .paginationContainer {
+    align-items: center;
+    gap: 39px;
+    .counterPagination {
+      .amountContainer p {
+        margin-bottom: 11px;
+      }
+      .counterContainer {
+        gap: 8px;
+        .minus {
+          width: 25px;
+          height: 25px;
+          img {
+            width: 3.12px;
+            height: 6.25px;
+          }
+        }
+        .plus {
+          width: 25px;
+          height: 25px;
+          img {
+            width: 3.12px;
+            height: 6.25px;
+          }
+        }
+      }
+    }
+    .bulletPagination {
+      display: flex;
+      gap: 10px;
+      div {
+        background: $clr-blue-2;
+        opacity: 40%;
+        width: 6px;
+        height: 6px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.3s;
+        &.active {
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
 }

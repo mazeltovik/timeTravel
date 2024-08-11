@@ -1,9 +1,6 @@
 //Styles
 import './ringMenu.scss';
 
-//React
-import { useRef, useState } from 'react';
-
 //Handlers
 import onClickRingMenu from '../../handlers/onClickRingMenu';
 

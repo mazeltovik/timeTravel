@@ -2,85 +2,43 @@
 
 .sliderContainer {
   opacity: 0;
-  &.fadeIn{
+  &.fadeIn {
     opacity: 1;
     animation: fadeIn 1.5s;
   }
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-// .swiper{
-//   width: 100% !important;
-//   // height: 100%;
-//   width: 100%;
-//   max-width: 100%;
-//   max-height: 100vh;
-//   // CSS Grid/Flexbox bug size workaround
-//   // @see https://github.com/kenwheeler/slick/issues/982
-//   // @see https://github.com/nolimits4web/swiper/issues/3599
-//   min-height: 0;
-//   min-width: 0;
-// }
-
-// .swiper-container {
-//   width: 100% !important;
-//   // height: 100%;
-//   width: 100%;
-//   max-width: 100%;
-//   max-height: 100vh;
-//   // CSS Grid/Flexbox bug size workaround
-//   // @see https://github.com/kenwheeler/slick/issues/982
-//   // @see https://github.com/nolimits4web/swiper/issues/3599
-//   min-height: 0;
-//   min-width: 0;
-// }
-
-// .myswiper {
-//   width: 100% !important;
-//   // height: 100%;
-//   width: 100%;
-//   max-width: 100%;
-//   max-height: 100vh;
-//   // CSS Grid/Flexbox bug size workaround
-//   // @see https://github.com/kenwheeler/slick/issues/982
-//   // @see https://github.com/nolimits4web/swiper/issues/3599
-//   min-height: 0;
-//   min-width: 0;
-// }
-
-// .swiper-container .swiper-wrapper .swiper-slide{
-//   width: 70%;
-// }
-
-.swiper-slide {
-  text-align: left;
-  background: inherit;
-  // width: 30% !important;
-  // overflow: hidden !important;
-//   justify-content: center;
-//   align-items: center;
-  // height: 100%;
-//   width: 20% !important;
-//   max-width: 100%;
-//   max-height: 100vh;
-  // CSS Grid/Flexbox bug size workaround
-  // @see https://github.com/kenwheeler/slick/issues/982
-  // @see https://github.com/nolimits4web/swiper/issues/3599
-//   min-height: 0;
-//   min-width: 0
-    .year{
-        color:$clr-blue-4;
-        padding-bottom: 15px;
-        font-size: 25px;
+.defaultSwiper {
+  .mySwiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        text-align: left;
+        background: inherit;
+        .year {
+          color: $clr-blue-4;
+          padding-bottom: 15px;
+          font-size: 25px;
+        }
+        .event {
+          color: $clr-blue-1;
+          font-size: 20px;
+        }
+      }
     }
-    .event{
-        color:$clr-blue-1;
-        font-size: 20px;
-    }
+  }
+}
+
+.paginationSwiper {
+  display: none;
 }
 
 .swiper-button-next,
@@ -100,7 +58,42 @@
 }
 
 .swiper-button-disabled {
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 990px) {
+  .defaultSwiper {
+    display: none;
+  }
+  .paginationSwiper {
+    display: block;
+    .mySwiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          text-align: left;
+          background: inherit;
+          .year {
+            color: $clr-blue-4;
+            padding-bottom: 15px;
+            font-size: 16px;
+          }
+          .event {
+            color: $clr-blue-1;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: $clr-blue-1 !important;
+  }
+  .swiper-slide-next {
+    opacity: 0.5 !important;
+  }
+  .swiper-slide-prev {
+    opacity: 0.5 !important;
+  }
 }

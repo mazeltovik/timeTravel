@@ -1,14 +1,17 @@
 //Styles
 import './slider.scss';
-import 'swiper/scss';
-import 'swiper/scss/navigation';
 
 //React
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 //library
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 //Handlers
 
@@ -28,28 +31,44 @@ export default function Slider({ content }: SliderProps) {
   }, [content]);
   return (
     <div className="sliderContainer" ref={sliderContainer}>
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        // setWrapperSize={true}
-        modules={[Navigation]}
-        className="mySwiper"
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
-        {content.map((item) => {
-          return (
-            <SwiperSlide key={item.year}>
-              <p className="year">{item.year}</p>
-              <p className="event">{item.event}</p>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      <div className="defaultSwiper">
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={3}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          {content.map((item) => {
+            return (
+              <SwiperSlide key={item.year}>
+                <p className="year">{item.year}</p>
+                <p className="event">{item.event}</p>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="paginationSwiper">
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1.5}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {content.map((item) => {
+            return (
+              <SwiperSlide key={item.year}>
+                <p className="year">{item.year}</p>
+                <p className="event">{item.event}</p>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 }
