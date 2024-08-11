@@ -1,3 +1,10 @@
+type Period = {
+  year: string;
+  event: string;
+};
+
+export type Content = Period[];
+
 const data = [
   {
     theme: 'Музыка',

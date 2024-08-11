@@ -1,0 +1,115 @@
+@import '../../main';
+
+.ringMenuWrapper{
+  position: relative;
+  .theme{
+    position: absolute;
+    left: calc(90% - 25px);
+    top: calc(9% - 25px);
+    font-size: 20px;
+    color: $clr-blue-1;
+    font-weight: bold;
+    opacity: 0;
+    &.fadeIn{
+      opacity: 1;
+      animation: fadeIn 1.5s;
+    }
+  }
+  .ringMenu {
+    position: relative;
+    border: 3px solid $clr-grey-1;
+    border-radius: 50%;
+    width: 530px;
+    height: 530px;
+    transition: 3s ease-out;
+    .menuItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      background: $clr-blue-2;
+      position: absolute;
+      left: calc(54% - 25px);
+      top: calc(54% - 25px);
+      width: 6px;
+      height: 6px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
+      &.active {
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+        height: 56px;
+        width: 56px;
+        background: $clr-grey-2;
+        border: 3px solid $clr-grey-1;
+        p {
+          display: block;
+          // transition: 4s;
+        }
+      }
+      &:hover {
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+        height: 56px;
+        width: 56px;
+        transition: 0.3s;
+        background: $clr-grey-2;
+        border: 3px solid $clr-grey-1;
+        p {
+          display: block;
+          // transition: 1s;
+        }
+      }
+      p {
+        text-align: center;
+        display: none;
+        user-select: none;
+        transition: none;
+      }
+      &:nth-child(1) {
+        transform: rotate(-60deg) translateX(263px);
+        p {
+          transform: rotate(60deg);
+        }
+      }
+      &:nth-child(2) {
+        transform: rotate(0deg) translateX(263px);
+        p {
+          transform: rotate(0deg);
+        }
+      }
+      &:nth-child(3) {
+        transform: rotate(60deg) translateX(263px);
+        p {
+          transform: rotate(-60deg);
+        }
+      }
+      &:nth-child(4) {
+        transform: rotate(120deg) translateX(263px);
+        p {
+          transform: rotate(-120deg);
+        }
+      }
+      &:nth-child(5) {
+        transform: rotate(180deg) translateX(263px);
+        p {
+          transform: rotate(-180deg);
+        }
+      }
+      &:nth-child(6) {
+        transform: rotate(240deg) translateX(263px);
+        p {
+          transform: rotate(-240deg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+

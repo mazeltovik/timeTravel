@@ -1,0 +1,52 @@
+@import '../../main';
+
+.paginationContainer{
+  .amountContainer p{
+    color: $clr-blue-1;
+    margin-bottom: 20px;
+  }
+  .counterContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 140px;
+    .minus {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid $clr-grey-1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      user-select: none;
+      cursor: pointer;
+      &.over{
+        opacity: 50%;
+      }
+      &:hover {
+        background: white;
+        transition: 0.3s ease-in;
+      }
+    }
+    .plus {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; 
+      border: 3px solid $clr-grey-1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      user-select: none;
+      cursor: pointer;
+      &.over{
+        opacity: 50%;
+      }
+      &:hover {
+        background: white;
+        transition: 0.3s ease-in;
+      }
+    }
+}
+}

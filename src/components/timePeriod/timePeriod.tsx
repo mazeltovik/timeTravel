@@ -6,19 +6,32 @@ import { useState, useEffect } from 'react';
 
 //Handlers
 
-export default function TimePeriod() {
-  const [period1, setPeriod1] = useState(1997);
-  const [period2, setPeriod2] = useState(2003);
-  const dest = [2010, 2025];
+//Types
+import { TimePeriodProps } from './timePeriodTypes';
+
+export default function TimePeriod({
+  period1,
+  setPeriod1,
+  period2,
+  setPeriod2,
+  dest,
+}: TimePeriodProps) {
   useEffect(() => {
     const [dest1, dest2] = dest;
     if (period1 != dest1 && period2 != dest2) {
-      setTimeout(() => {
-        setPeriod1(period1 + 1);
-        setPeriod2(period2 + 1);
-      }, 100);
+      if (period1 < dest1 && period2 < dest2) {
+        setTimeout(() => {
+          setPeriod1(period1 + 1);
+          setPeriod2(period2 + 1);
+        }, 100);
+      } else {
+        setTimeout(() => {
+          setPeriod1(period1 - 1);
+          setPeriod2(period2 - 1);
+        }, 100);
+      }
     }
-  }, [period1, period2]);
+  }, [period1, period2, dest]);
   return (
     <div className="timeContainer">
       <p>{period1}</p>

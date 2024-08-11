@@ -2,8 +2,9 @@
 
 .timeContainer {
   display: flex;
-  gap: 7rem;
+  gap: 5.5rem;
   font-size: 200px;
+  user-select: none;
   & :nth-child(1) {
     color: $clr-blue-3;
   }
