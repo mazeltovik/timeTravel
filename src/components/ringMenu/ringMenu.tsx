@@ -1,6 +1,9 @@
 //Styles
 import './ringMenu.scss';
 
+//React
+import { useMemo, useCallback } from 'react';
+
 //Handlers
 import onClickRingMenu from '../../handlers/onClickRingMenu';
 
@@ -19,20 +22,22 @@ export default function RingMenu({
   theme,
   setTheme,
 }: RingMenuProps) {
+  const clickCashed = useMemo(
+    () =>
+      onClickRingMenu(
+        ringMenuRef,
+        setCurrentPeriod,
+        setDest,
+        setContent,
+        setTheme
+      ),
+    []
+  );
+  const onClickRing = useCallback(clickCashed, []);
   return (
     <div className="ringMenuWrapper">
       <Theme theme={theme} currentPeriod={currentPeriod} />
-      <div
-        className="ringMenu"
-        ref={ringMenuRef}
-        onClick={onClickRingMenu(
-          ringMenuRef,
-          setCurrentPeriod,
-          setDest,
-          setContent,
-          setTheme
-        )}
-      >
+      <div className="ringMenu" ref={ringMenuRef} onClick={onClickRing}>
         <div className="menuItem active" id="0">
           <p id="0">1</p>
         </div>

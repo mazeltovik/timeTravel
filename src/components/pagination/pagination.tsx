@@ -3,7 +3,7 @@ import { PaginationType } from './paginationTypes';
 import Minus from '../../assets/Vector 2 (1).svg';
 import Plus from '../../assets/Vector 2 (2).svg';
 import onClickPagination from '../../handlers/onClickPagination';
-import { useRef } from 'react';
+import { useRef, useMemo, useCallback } from 'react';
 
 export default function Pagination({
   currentPeriod,
@@ -15,25 +15,28 @@ export default function Pagination({
   setTheme,
 }: PaginationType) {
   const bulletContainer = useRef<HTMLDivElement>(null);
+  const clickCashed = useMemo(
+    () =>
+      onClickPagination(
+        setCurrentPeriod,
+        maxLength,
+        ringMenu,
+        setDest,
+        setContent,
+        setTheme,
+        bulletContainer,
+        false
+      ),
+    []
+  );
+  const clickPagination = useCallback(clickCashed, []);
   return (
     <div className="paginationContainer">
       <div className="counterPagination">
         <div className="amountContainer">
           <p>{`0${currentPeriod + 1 + '/0' + maxLength}`}</p>
         </div>
-        <div
-          className="counterContainer"
-          onClick={onClickPagination(
-            setCurrentPeriod,
-            maxLength,
-            ringMenu,
-            setDest,
-            setContent,
-            setTheme,
-            bulletContainer,
-            false
-          )}
-        >
+        <div className="counterContainer" onClick={clickPagination}>
           <p className={currentPeriod != 0 ? 'minus' : 'minus over'}>
             <img src={Minus} alt="minus" />
           </p>
@@ -57,7 +60,7 @@ export default function Pagination({
         )}
       >
         {new Array(maxLength).fill(0).map((_, i) => {
-          if (i == 0)
+          if (i == currentPeriod)
             return <div key={i} id={String(i)} className="active"></div>;
           else return <div key={i} id={String(i)}></div>;
         })}
