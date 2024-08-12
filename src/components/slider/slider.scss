@@ -18,8 +18,33 @@
 }
 
 .defaultSwiper {
+  position: relative;
+  width: 100%;
+  padding: 0 50px;
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    width: 5px !important;
+    height: 10px !important;
+    font-size: 10px !important;
+    font-weight: bolder;
+  }
+
+  .swiper-button-disabled {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+  }
   .mySwiper {
     .swiper-wrapper {
+      cursor: pointer;
       .swiper-slide {
         text-align: left;
         background: inherit;
@@ -39,28 +64,6 @@
 
 .paginationSwiper {
   display: none;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  background: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  width: 5px !important;
-  height: 10px !important;
-  font-size: 10px !important;
-  font-weight: bolder;
-}
-
-.swiper-button-disabled {
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 990px) {

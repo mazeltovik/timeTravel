@@ -35,10 +35,10 @@ export default function Slider({ content }: SliderProps) {
         <Swiper
           spaceBetween={30}
           slidesPerView={3}
-          pagination={{
-            clickable: true,
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
           }}
-          navigation={true}
           modules={[Navigation]}
           className="mySwiper"
         >
@@ -51,14 +51,11 @@ export default function Slider({ content }: SliderProps) {
             );
           })}
         </Swiper>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </div>
       <div className="paginationSwiper">
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1.5}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
+        <Swiper spaceBetween={30} slidesPerView={1.5} className="mySwiper">
           {content.map((item) => {
             return (
               <SwiperSlide key={item.year}>
